@@ -3,7 +3,8 @@ project(fpgalink)
 if (${CMAKE_SYSTEM_NAME} MATCHES "Windows")
   set(LIBFPGALINK_LIB_DIR "bin")
 else()
-  set(LIBFPGALINK_LIB_DIR "lib")
+  include(GNUInstallDirs)
+  set(LIBFPGALINK_LIB_DIR ${CMAKE_INSTALL_LIBDIR})
 endif()
 
 # Create a shared library
